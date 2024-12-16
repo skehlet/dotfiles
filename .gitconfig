@@ -1,0 +1,27 @@
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[user]
+	name = Steve Kehlet
+	email = steve.kehlet@gmail.com
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[push]
+	default = simple
+[core]
+        #excludesfile = /Users/skehlet/.gitignore_global
+        pager = /opt/homebrew/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less
+[alias]
+        #unadd = reset HEAD
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        ## From John H.:
+        #publish = "!git push -u origin $(git branch-name)"
+
+[init]
+        defaultBranch = main
+[pull]
+        rebase = true
