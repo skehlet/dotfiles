@@ -27,7 +27,7 @@
     // "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
     // "editor.fontSize": 13,
     "editor.minimap.enabled": false,
-    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.multiCursorModifier": "alt",
     "editor.suggestSelection": "first",
     "editor.tabSize": 4,
     "eslint.format.enable": true,
