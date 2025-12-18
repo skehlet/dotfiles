@@ -4,7 +4,7 @@
 	smudge = git media smudge %f
 [user]
 	name = Steve Kehlet
-	email = steve.kehlet@gmail.com
+	email = steve.kehlet@risrx.com
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
@@ -23,5 +23,29 @@
 
 [init]
         defaultBranch = main
+
+# removed 2025-08-27 because rebasing on git pull (git fetch && git rebase) is not what I always want to do
 #[pull]
 #        rebase = true
+
+[url "ssh://git@bitbucket.org/risrx/"]
+        insteadOf = https://bitbucket.org/risrx/
+
+# Future steps to merge or rebase main into my dev branches:
+# # 1. Get the latest info
+# git fetch origin
+# 
+# # 2. Look at the changes
+# # Translation: Show me all the commits in origin/main's history that are not in my feature branch's history.
+# git log HEAD..origin/main --oneline
+# 
+# # 3. Decide:
+# # For a clean history with small changes...
+# git rebase origin/main
+# # OR for big, scary changes...
+# git merge origin/main
+#
+# Note on two dots vs three:
+# Two Dots (A..B): Shows commits in B that are not in A. It's asymmetric.
+#
+# Three Dots (A...B): Shows commits that are in A or B, but not in both. It's the symmetric difference—all the unique work done on both branches since they diverged.

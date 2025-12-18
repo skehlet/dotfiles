@@ -1,118 +1,107 @@
-// Place your settings in this file to overwrite the default settings
 {
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+    "[dockercompose]": {
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.insertSpaces": true,
+        "editor.quickSuggestions": {
+            "comments": false,
+            "other": true,
+            "strings": true
+        },
+        "editor.tabSize": 2
     },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "[typescript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "[sql]": {
+        "editor.defaultFormatter": "ms-mssql.mssql"
     },
-    "[yaml]": {
-        // "editor.defaultFormatter": "redhat.vscode-yaml",
-        "editor.tabSize": 4
+    "accessibility.openChatEditedFiles": true,
+    "amazonQ.suppressPrompts": {
+        "amazonQChatDisclaimer": true,
+        "amazonQChatPairProgramming": true
     },
-    "aws.suppressPrompts": {
-        "codeWhispererNewWelcomeMessage": true
+    "chat.checkpoints.showFileChanges": true,
+    "chat.commandCenter.enabled": false,
+    "chat.tools.terminal.autoApprove": {
+        "dotnet build": true,
+        "dotnet test test/PreVailApiV2UnitTests/PreVailApiV2UnitTests.csproj --no-build": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "error)\"": true,
+        "failed)": true,
+        "git remote": true,
+        "pulumi preview": true,
+        "pulumi stack export": true,
+        "pulumi stack output": true
     },
-    "boot-java.rewrite.reconcile": true,
+    "diffEditor.codeLens": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.accessibilitySupport": "off",
-    "editor.find.seedSearchStringFromSelection": "never",
-    // "editor.fontFamily": "Menlo",
-    // "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
-    // "editor.fontSize": 13,
+    "docker.extension.enableComposeLanguageServer": false,
+    "dotnet.codeLens.enableReferencesCodeLens": false,
+    "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.goToImplementation",
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "alt",
     "editor.suggestSelection": "first",
     "editor.tabSize": 4,
     "eslint.format.enable": true,
     "explorer.confirmDragAndDrop": false,
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.factorypath": true,
-        "**/.project": true,
-        "**/.settings": true
+    "github.copilot.enable": {
+        "*": true,
+        "markdown": false,
+        "plaintext": false,
+        "scminput": false
     },
-    "git.confirmSync": false,
-    "gitlens.codeLens.authors.enabled": false,
-    "gitlens.codeLens.recentChange.enabled": false,
-    "gitlens.currentLine.enabled": false,
-    "go.alternateTools": {
-        "go": "/opt/homebrew/bin/go"
-    },
-    "go.toolsEnvVars": {
-        "GOPRIVATE": "bitbucket.org/avaneer"
-    },
+    "github.copilot.nextEditSuggestions.enabled": true,
     "go.toolsManagement.autoUpdate": true,
-    "gopls": {
-        "ui.diagnostic.staticcheck": true
-    },
-    // "gradle.nestedProjects": true,
-    "html.format.endWithNewline": true,
-    "jupyter.askForKernelRestart": false,
-    "jupyter.interactiveWindow.creationMode": "perFile",
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-    },
-    "search.exclude": {
-        "**/node_modules": false,
-        "/node_modules": true
-    },
+    "markdown-pdf.displayHeaderFooter": false,
+    "markdown-pdf.orientation": "landscape",
+    "markdown-pdf.scale": 0.5,
+    "mssql.connectionGroups": [
+        {
+            "id": "FE743B22-16CE-40D5-9B2A-547A6FBB1898",
+            "name": "ROOT"
+        }
+    ],
+    "mssql.connections": [
+        {
+            "applicationName": "vscode-mssql",
+            "authenticationType": "SqlLogin",
+            "commandTimeout": 30,
+            "connectTimeout": 30,
+            "database": "internal_prevail2client",
+            "displayName": "DEV Prevail2-Development dev-prevail2-client-internal",
+            "groupId": "FE743B22-16CE-40D5-9B2A-547A6FBB1898",
+            "id": "8E94AC85-E88D-4196-BD3F-564FA42F4704",
+            "password": "",
+            "port": "1434",
+            "profileName": "DEV Prevail2-Development dev-prevail2-client-internal",
+            "savePassword": true,
+            "server": "localhost",
+            "trustServerCertificate": true,
+            "user": "Prevail2ClientAdmin"
+        }
+    ],
+    "mssql.enableRichExperiences": true,
+    "rewrap.wrappingColumn": 100,
     "terminal.integrated.defaultLocation": "editor",
-    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.env.osx": {
-        "GOPRIVATE": "bitbucket.org/avaneer"
+        "GOPRIVATE": "bitbucket.org/risrx"
     },
     "terminal.integrated.fontFamily": "Menlo",
     "terminal.integrated.macOptionIsMeta": true,
     "terminal.integrated.scrollback": 10000,
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorCustomizations": {
-        "[Default Dark+]": {
-            // "statusBar.background" : "#486357",
-            // "statusBar.foreground" : "#c8e9c5",
-            "tab.activeBackground": "#434444",
-            // "tab.activeForeground": "#e100ff",
-            "tab.inactiveBackground": "#212121"
-            // "tab.inactiveForeground": "#00b7ff",
-            // "tab.lastPinnedBorder": "#fafafa",
-            // "tab.unfocusedActiveForeground": "#fbff00",
-            // "tab.unfocusedActiveBackground": "#ff0000",
-        }
-        // "[Some Other Theme Name]": {
-        //     "statusBar.background" : "#385357",
-        //     "statusBar.foreground" : "#d7e9c4",
-        // }
+    "terminal.integrated.suggest.enabled": false,
+    "workbench.editor.autoLockGroups": {
+        "repl": true
     },
     "workbench.editor.enablePreview": false,
     "workbench.editor.wrapTabs": true,
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
-    "workbench.tree.indent": 18,
-    "yaml.customTags": [
-        "!Equals sequence",
-        "!FindInMap sequence",
-        "!GetAtt",
-        "!GetAZs",
-        "!ImportValue",
-        "!Join sequence",
-        "!Ref",
-        "!Select sequence",
-        "!Split sequence",
-        "!Sub"
-    ],
-    "workbench.editor.tabSizing": "shrink",
-    "workbench.editor.untitled.labelFormat": "name",
-    "[jinja]": {},
-    "black-formatter.args": [
-        "--line-length",
-        "120"
-    ]
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 20
 }

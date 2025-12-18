@@ -30,6 +30,22 @@ showcert() {
     openssl s_client -connect "$1" <<<'QUIT' | openssl x509 -noout -text -certopt no_pubkey -certopt no_sigdump
 }
 
+function git-prod-changes() {
+  local latest_prod_tag=$(git tag -l "*latest-prod" --sort=-creatordate | head -n 1)
+  echo "Changes since $latest_prod_tag:"
+  git log $latest_prod_tag..main --oneline --first-parent
+}
+
+function git-dev-changes() {
+  local latest_dev_tag=$(git tag -l "*latest-dev" --sort=-creatordate | head -n 1)
+  echo "Changes since $latest_dev_tag:"
+  git log $latest_dev_tag..main --oneline --first-parent
+}
+
+function git-recent-branches() {
+  git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)' | head
+}
+
 # do something with this at some point
 # for f in *; do [[ -f "$f" ]] && { echo $f; git diff 'HEAD@{1 day ago}' HEAD -- "$f" }; done
 
@@ -40,3 +56,17 @@ alias ls="ls -GF"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# stop pulumi asking for password for S3 backend state
+export PULUMI_CONFIG_PASSPHRASE=
+
+# pnpm
+export PNPM_HOME="/Users/stevekehlet/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+## Added by Antigravity
+#export PATH="/Users/stevekehlet/.antigravity/antigravity/bin:$PATH"
