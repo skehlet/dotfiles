@@ -1,1 +1,3 @@
+# Note: this is for Bash to stop the shell from automatically adding a trailing slash to directories during tab completion.
+# Comparable zsh setting is unsetopt AUTO_REMOVE_SLASH in ~/.zshrc
 set mark-directories Off
