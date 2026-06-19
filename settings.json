@@ -13,43 +13,60 @@
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "[sql]": {
-        "editor.defaultFormatter": "ms-mssql.mssql"
+        "editor.defaultFormatter": "mtxr.sqltools"
     },
     "accessibility.openChatEditedFiles": true,
-    "amazonQ.suppressPrompts": {
-        "amazonQChatDisclaimer": true,
-        "amazonQChatPairProgramming": true
-    },
     "chat.checkpoints.showFileChanges": true,
-    "chat.commandCenter.enabled": false,
     "chat.tools.terminal.autoApprove": {
+        "/^go build \\./\\.\\.\\.$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^npx tsc --noEmit 2>&1$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
         "dotnet build": true,
         "dotnet test test/PreVailApiV2UnitTests/PreVailApiV2UnitTests.csproj --no-build": {
             "approve": true,
             "matchCommandLine": true
         },
-        "error)\"": true,
-        "failed)": true,
-        "git remote": true,
-        "pulumi preview": true,
-        "pulumi stack export": true,
-        "pulumi stack output": true
+        "go": true,
+        "npx tsc": true,
+        "pulumi preview": true
     },
+    "chat.tools.urls.autoApprove": {
+        "https://code.visualstudio.com": true,
+        "https://github.com/microsoft/vscode/wiki/*": true,
+        "https://ris-escalation-portal.lovable.app": true
+    },
+    "chat.viewSessions.orientation": "stacked",
+    "claudeCode.preferredLocation": "panel",
+    "cSpell.userWords": [
+        "FHIR",
+        "Pulumi"
+    ],
     "diffEditor.codeLens": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "docker.extension.enableComposeLanguageServer": false,
     "dotnet.codeLens.enableReferencesCodeLens": false,
     "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.goToImplementation",
     "editor.minimap.enabled": false,
-    "editor.multiCursorModifier": "alt",
-    "editor.suggestSelection": "first",
-    "editor.tabSize": 4,
-    "eslint.format.enable": true,
     "explorer.confirmDragAndDrop": false,
+    "git.blame.editorDecoration.enabled": false,
+    "git.blame.statusBarItem.enabled": true,
+    "github.copilot.chat.agentDebugLog.fileLogging.enabled": true,
+    "github.copilot.chat.anthropic.thinking.budgetTokens": 10000,
     "github.copilot.enable": {
         "*": true,
         "markdown": false,
@@ -57,6 +74,7 @@
         "scminput": false
     },
     "github.copilot.nextEditSuggestions.enabled": true,
+    "github.copilot.selectedCompletionModel": "",
     "go.toolsManagement.autoUpdate": true,
     "markdown-pdf.displayHeaderFooter": false,
     "markdown-pdf.orientation": "landscape",
@@ -87,8 +105,9 @@
         }
     ],
     "mssql.enableRichExperiences": true,
+    "python.analysis.typeCheckingMode": "basic",
     "rewrap.wrappingColumn": 100,
-    "terminal.integrated.defaultLocation": "editor",
+    "sqltools.connections": [],
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.env.osx": {
         "GOPRIVATE": "bitbucket.org/risrx"
@@ -97,6 +116,8 @@
     "terminal.integrated.macOptionIsMeta": true,
     "terminal.integrated.scrollback": 10000,
     "terminal.integrated.suggest.enabled": false,
+    "window.confirmBeforeClose": "always",
+    "workbench.colorTheme": "Dark Modern",
     "workbench.editor.autoLockGroups": {
         "repl": true
     },
