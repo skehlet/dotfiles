@@ -7,10 +7,15 @@ bindkey "^[r" undo
 
 PROMPT='[%@] %m:%~ %# '
 
-alias l='ls -la'
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+case $- in
+    *i*)
+        alias ls="ls -GF"
+        alias l='ls -la'
+        alias rm='rm -i'
+        alias cp='cp -i'
+        alias mv='mv -i'
+        ;;
+esac
 
 hdiff() {
     colordiff -u --strip-trailing-cr "$@" | /opt/homebrew/share/git-core/contrib/diff-highlight/diff-highlight
@@ -46,27 +51,13 @@ function git-recent-branches() {
   git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)' | head
 }
 
-# do something with this at some point
-# for f in *; do [[ -f "$f" ]] && { echo $f; git diff 'HEAD@{1 day ago}' HEAD -- "$f" }; done
+# AI Agent settings
+# AI_AGENT is set by VS Code Copilot agent terminals (e.g. AI_AGENT=github_copilot_vscode_agent)
+if [[ -n "$AI_AGENT" ]]; then
+    # These aliases prompt for confirmation and block agent command execution
+    unalias rm cp mv 2>/dev/null
+fi
 
-# mac os x ls color
-export LSCOLORS=DxGxcxdxCxegedabagacad
-alias ls="ls -GF"
-
-export NVM_DIR="$HOME/.nvm"
+# NVM_DIR is set in .zshenv; sourcing here sets up nvm shell functions for interactive use
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# stop pulumi asking for password for S3 backend state
-export PULUMI_CONFIG_PASSPHRASE=
-
-# pnpm
-export PNPM_HOME="/Users/stevekehlet/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-## Added by Antigravity
-#export PATH="/Users/stevekehlet/.antigravity/antigravity/bin:$PATH"
