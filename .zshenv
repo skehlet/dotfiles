@@ -9,6 +9,12 @@ case ":$PATH:" in
   *) export PATH="$PATH:$HOME/.dotnet/tools" ;;
 esac
 
+# Local user binaries (e.g. Claude Code)
+case ":$PATH:" in
+  *":$HOME/.local/bin:"*) ;;
+  *) export PATH="$HOME/.local/bin:$PATH" ;;
+esac
+
 # AI Agent settings
 # AI_AGENT is set by VS Code Copilot agent terminals (e.g. AI_AGENT=github_copilot_vscode_agent)
 if [[ -n "$AI_AGENT" ]]; then
